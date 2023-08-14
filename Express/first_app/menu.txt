@@ -1,0 +1,30 @@
+#Express
+
+to stat the server app you have to use "app=express()"
+
+After start to listensing for request "app.listen(3000 ()=>{})"
+where 3000 are port that is  "localhost : 3000"
+
+and to get a response we use "app.use(()=>{}) " any we get the request this call back will run
+
+\\how to respond
+    
+res,req by passing argument in .use(req,res)
+    where req:- gets the request and res:will genrate a new respond
+
+//routing:-
+taking incoming requests and a path that is requested and matching with some code.
+there different HTTP verbs
+get(),puts(),posts
+express will differentiate between incoming request og different types
+
+on routing we can also generate some patterns like /r/:subreddit/:subreddit
+or /r/:subreddit/:postId
+we can also accesses :subreddit value using params like   const {subreddit,postId}=req.params;
+
+//query string
+is the portion of URL that comes after ? mark and we can include information in key value pairs
+In the request (req) that a particular property called query in that we can found a key value pairs made or based upon the query string.
+
+ //nodemon is npm which automatically restart the server whenever there is any changes we made
+[link]c:\Users\zh422\OneDrive\Pictures\Screenshots\Screenshot 2023-08-03 231853.png

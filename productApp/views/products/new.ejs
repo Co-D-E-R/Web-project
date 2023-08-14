@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>ADD PRODUCT</h1>
+    <form action="/products" method="POST">
+        <label for="name">product name</label>
+        <input type="text" name="name" id="name" placeholder="product name">
+        <label for="price">price(unit)</label>
+        <input type="number" name="price" id="price" placeholder="price">
+        <label for="category">Select Category</label>
+        <select name="category" id="category">
+            <% for(category of categories){%>
+                <option value="<%=category%>"><%=category%></option>
+            <% } %>
+        </select>
+        <button>Add Product</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1 style="text-transform: uppercase;"><%=category%> Product List Are :</h1>
+    <ol type="1">
+        <% for(product of products) { %>
+            <li><a href="products/<%= product._id %>"><%=product.name%></a></li>
+
+        <% } %>
+
+    </ol>
+
+    <% if(category !== ''){%>
+        <a href="/products"><button>ALL Product</button></a>
+    <% } %>
+    <a href="/products/new"><button>Add Product</button></a>
+    
+    
+</body>
+</html>

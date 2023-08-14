@@ -1,0 +1,65 @@
+
+ TEMPLATING
+Templating allows us to define a preset "pattern" for a
+webpage, that we can dynamically modify.
+For example, we could define a single "Search" template
+that displays all the results for a given search term. We
+don't know what the term is or how many results there
+are ahead of time. The webpage is created on the fly.
+
+//the template we are ejs stands for embarded java script
+and to add ejs we use" app.set('view engine','ejs')" parameter of key and value
+//imp
+and we also need view folder because by defult express will go view template in "./view" folder.
+and make .ejs file in view folder.
+
+//To set a path so that even if i not in current dir we can start server with using index.js location 
+app.set('views',path.join(__dirname,'/views'));
+we also require to add a path "const path = require('path');"
+
+To render the ejs file we need to  we had to kept .ejs file in view dir
+then in app.get () we can render then using res.rander();
+
+//serving static files in express "express.static('file_name')"
+
+GET
+- Used to retrieve information
+- Data is sent via query string
+- Information is plainly visible in the URL!
+- Limited amount of data can be sent
+
+POST
+- Used to post data to the server
+- Used to write/create/update
+- Data is sent via request body, not a query string!
+- Can send any sort of data (JSON!)
+
+
+req.body
+link:-https://expressjs.com/en/4x/api.html#req.body
+Contains key-value pairs of data submitted in the request body. 
+By default, it is undefined, and is populated when you use body-parsing middleware such as express.json() or express.urlencoded().
+
+The following example shows how to use body-parsing middleware to populate req.body.
+
+var express = require('express')
+
+var app = express()
+
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+app.post('/profile', function (req, res, next) {
+  console.log(req.body)
+  res.json(req.body)
+})
+
+WTF IS REST?
+
+REST is an "architectural style for distributed hypermedia systems". Yikes.
+It's basically a set of guidelines for how a client + server should communicate and perform CRUD operations on a given resource.
+The main idea of REST is treating data on the server- side as resources than can be CRUDed
+The most common way of approaching REST is informatting the URLs and HTTP verbs in your
+applications.
+
+To Read more about rest :-https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm

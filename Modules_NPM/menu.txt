@@ -1,0 +1,10 @@
+npm init help to create a package.json
+
+npm init -y --> defult setting 
+
+package.json keeps a track of dependences of which version are required
+
+if i have a another code base then i can install all the dependences only running npm install
+it install all the correct version
+
+#Language detector
